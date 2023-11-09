@@ -19,7 +19,7 @@
         [#nested ]
 
         </div>
-        <footer>Copyright &copy; 2027 by Mirek Stránský.</footer>
+        <footer>Copyright &copy; 2023 by Mirek Stránský.</footer>
     </div>
     </body>
     </html>
