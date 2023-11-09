@@ -99,12 +99,9 @@
                     </li>
                 </ul>
                 <form action="/" method="post">
-                    <div class="item-price">
-                        <strong>${item.price}€</strong>
-                        <input type="hidden" value="${item.price}" name="price" />
+                    <div class="item-link">
                         <input type="hidden" value="${item.name}" name="name" />
                         <button type="submit" class="btn btn--small">Enter the battle</button>
-
                     </div>
                 </form>
             </div>
