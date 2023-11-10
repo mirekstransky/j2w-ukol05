@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-<h1>Objednáno !!!</h1>
+<h1>Objednáno na email ${form.email} a na jméno ${form.name}!!!</h1>
 </body>
 </html>
