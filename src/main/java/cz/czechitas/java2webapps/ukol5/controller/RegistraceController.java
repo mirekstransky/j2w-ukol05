@@ -36,7 +36,7 @@ public class RegistraceController {
       return modelAndView;
   }
   @PostMapping("/")
-  public ModelAndView indexPost(String name){
+  public String indexPost(String name){
     this.name = name;
     if (name.equals("Darth Vader")){
       imageBackground = "vader-background";
@@ -47,9 +47,10 @@ public class RegistraceController {
       imageBackground = "maul-background";
     }
 
-    ModelAndView modelAndView = new ModelAndView("redirect:/registration");
-    modelAndView.addObject("form", new PersonForm());
-    return modelAndView;
+//    ModelAndView modelAndView = new ModelAndView("redirect:/registration");
+//    modelAndView.addObject("form", new PersonForm());
+//    return modelAndView;
+    return "redirect:/registration";
   }
 
   @GetMapping("/registration")

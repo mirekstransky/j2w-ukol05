@@ -19,7 +19,7 @@
 <div class="container">
     <form class="kosik" action="/registration" method="post">
         <h1>Registration for battle</h1>
-        <div class="status">${vizitka.status!x}</div>
+[#--        <div class="status">${vizitka.status!x}</div>--]
 
         <label for="name" class="radek">Name:</label>
 
