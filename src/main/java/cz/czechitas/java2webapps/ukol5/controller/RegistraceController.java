@@ -21,7 +21,7 @@ import java.util.Random;
 public class RegistraceController {
 
   private String imageBackground;
-  private String name;
+  private String captionName;
   private final Random random = new Random();
   private final List<Item> seznamItem = List.of(
           new Item("Darth Vader","dart-vader.jpg","Dark side power","Light-saber","Power of telekinesis","Relationship with Luke Skywalker","Moral Conflicts", 250),
@@ -36,14 +36,14 @@ public class RegistraceController {
       return modelAndView;
   }
   @PostMapping("/")
-  public String indexPost(String name){
-    this.name = name;
-    if (name.equals("Darth Vader")){
+  public String indexPost(String captionName){
+    this.captionName = captionName;
+    if (captionName.equals("Darth Vader")){
       imageBackground = "vader-background";
 
-    } else if (name.equals("Palpatine")) {
+    } else if (captionName.equals("Palpatine")) {
       imageBackground = "palpatine-background";
-    } else if (name.equals("Darth Maul")) {
+    } else if (captionName.equals("Darth Maul")) {
       imageBackground = "maul-background";
     }
 
@@ -58,7 +58,7 @@ public class RegistraceController {
     ModelAndView modelAndView = new ModelAndView("registration");
     modelAndView.addObject("form", new PersonForm());
     modelAndView.addObject("image", imageBackground);
-    modelAndView.addObject("name", name);
+    modelAndView.addObject("enemy", captionName);
     return modelAndView;  }
 
   @PostMapping("/registration")
@@ -67,11 +67,15 @@ public class RegistraceController {
     if (bindingResult.hasErrors()) {
 //      return "registration";
       return new ModelAndView("registration")
-              .addObject("image", imageBackground);
+              .addObject("image", imageBackground)
+              .addObject("enemy",captionName);
+
     }
     return new ModelAndView("order")
             .addObject("kod", Math.abs(random.nextInt()))
-            .addObject("person", form);
+            .addObject("person", form)
+            .addObject("enemy",captionName);
+
   };
 
 }
