@@ -11,14 +11,21 @@
             background: white url(/images/${image}.jpg) center center/cover no-repeat;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <form class="kosik" action="/registration" method="post">
         <h1>Registration for battle</h1>
+        <div class="status">${vizitka.status!x}</div>
+
         <label for="name" class="radek">Name:</label>
+
         [@spring.formInput path="form.name" /]
         <div class="error">[@spring.showErrors "<br>"/]</div>
+
 
         <label for="surname" class="radek">Surname:</label>
         [@spring.formInput path="form.surname" /]
@@ -48,9 +55,9 @@
         </div>
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
-        <div class="radek controls">
-            <button type="submit">Order a fight</button>
-        </div>
+
+        <button type="submit" class="btn btn--small">Order a fight</button>
+
 
     </form>
 </div>

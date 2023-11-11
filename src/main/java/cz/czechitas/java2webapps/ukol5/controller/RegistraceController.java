@@ -21,6 +21,7 @@ import java.util.Random;
 public class RegistraceController {
 
   private String imageBackground;
+  private String name;
   private final Random random = new Random();
   private final List<Item> seznamItem = List.of(
           new Item("Darth Vader","dart-vader.jpg","Dark side power","Light-saber","Power of telekinesis","Relationship with Luke Skywalker","Moral Conflicts", 250),
@@ -36,14 +37,16 @@ public class RegistraceController {
   }
   @PostMapping("/")
   public ModelAndView indexPost(String name){
-
+    this.name = name;
     if (name.equals("Darth Vader")){
       imageBackground = "vader-background";
+
     } else if (name.equals("Palpatine")) {
       imageBackground = "palpatine-background";
     } else if (name.equals("Darth Maul")) {
       imageBackground = "maul-background";
     }
+
     ModelAndView modelAndView = new ModelAndView("redirect:/registration");
     modelAndView.addObject("form", new PersonForm());
     return modelAndView;
@@ -54,6 +57,7 @@ public class RegistraceController {
     ModelAndView modelAndView = new ModelAndView("registration");
     modelAndView.addObject("form", new PersonForm());
     modelAndView.addObject("image", imageBackground);
+    modelAndView.addObject("name", name);
     return modelAndView;  }
 
   @PostMapping("/registration")

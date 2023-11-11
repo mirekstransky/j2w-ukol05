@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
+
     font-family: 'Titillium Web', sans-serif;
     background-color: white;
-    color: darkslategray;
+    /*color: darkslategray;*/
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,58 +17,29 @@ body {
 }
 
 h1 {
+    font-family: 'Rubik Mono One', monospace;
     text-align: center;
-}
-
-.nabidka {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.nabidka > a {
-    width: 200px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    border: 1px solid silver;
-    border-radius: 5px;
-    box-shadow: 0 0 10px darkgray;
-}
-
-.nabidka > a:hover {
-    border-color: darkslategray;
-}
-
-.nabidka--cokolada {
-    background-color: chocolate;
-}
-
-.nabidka--alkohol {
-    background-color: crimson;
 }
 
 .kosik {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    padding: 20px;
-    border: 1px solid silver;
+    width: 350px;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    background-color: aliceblue;
+    background-color: #718093;
     box-shadow: 0 0 10px darkgray;
+}
+.kosik input{
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .kosik .radek {
     display: block;
     margin-top: 1em;
 }
-
 .kosik .skupina {
     display: flex;
     flex-direction: row;
@@ -86,4 +58,60 @@ h1 {
 
 header {
     margin-bottom: 2rem;
+}
+.input input{
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #eee
+}
+.kosik{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+
+.btn {
+    margin-top: 10px;
+    background-color: #7d7d8f;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    display: inline-block;
+    border-radius: 20px;
+    /*border-radius: 20px;*/
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #e84118;
+    color: black;
+    cursor: pointer;
+}
+
+.btn--big {
+    font-size: 18px;
+    padding: 16px 32px;
+}
+
+.btn--small {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.status {
+    position: absolute;
+    display: inline-block;
+    border: 5px dot-dash darkred;
+    top: -10px;
+    right: -20px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #8d4f4f;
+    border-radius: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color:black;
 }
