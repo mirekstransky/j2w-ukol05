@@ -17,9 +17,9 @@
 </head>
 <body>
 <div class="container">
-    <form class="kosik" action="/registration" method="post">
+    <form class="container-order" action="/registration" method="post">
         <h1>Registration for battle</h1>
-[#--        <div class="status">${vizitka.status!x}</div>--]
+        <h2>${enemy}</h2>
 
         <label for="name" class="radek">Name:</label>
 
