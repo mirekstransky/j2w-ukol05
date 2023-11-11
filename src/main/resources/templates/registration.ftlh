@@ -31,8 +31,8 @@
         [@spring.formInput path="form.surname" /]
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
-        <label for="age" class="radek">Age:</label>
-        [@spring.formInput path="form.age" fieldType="number" /]
+        <label for="age" class="radek">Date of birth:</label>
+        [@spring.formInput path="form.age" fieldType="date" /]
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
         <label for="email" class="radek">E-mail:</label>

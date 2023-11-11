@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.Random;
 
@@ -38,6 +41,7 @@ public class RegistraceController {
   @PostMapping("/")
   public String indexPost(String captionName){
     this.captionName = captionName;
+
     if (captionName.equals("Darth Vader")){
       imageBackground = "vader-background";
 
@@ -47,9 +51,6 @@ public class RegistraceController {
       imageBackground = "maul-background";
     }
 
-//    ModelAndView modelAndView = new ModelAndView("redirect:/registration");
-//    modelAndView.addObject("form", new PersonForm());
-//    return modelAndView;
     return "redirect:/registration";
   }
 
@@ -64,12 +65,21 @@ public class RegistraceController {
   @PostMapping("/registration")
   public Object form(@Valid @ModelAttribute("form") PersonForm form, BindingResult bindingResult) {
 
+
     if (bindingResult.hasErrors()) {
 //      return "registration";
       return new ModelAndView("registration")
               .addObject("image", imageBackground)
               .addObject("enemy",captionName);
 
+    }
+    LocalDate birthDate = form.getAge();
+    Period period = birthDate.until(LocalDate.now());
+
+    int age = period.getYears();
+    if (age < 18) {
+//      return new ModelAndView("lowAge");
+      return "/lowAge";
     }
     return new ModelAndView("order")
             .addObject("kod", Math.abs(random.nextInt()))

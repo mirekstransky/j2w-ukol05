@@ -1,5 +1,8 @@
 package cz.czechitas.java2webapps.ukol5.entity;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 
 public class PersonForm {
 
@@ -7,9 +10,12 @@ public class PersonForm {
     private String name;
     @NotBlank
     private String surname;
-    @Min(18)
-    @Max(150)
-    private int age;
+//    @Min(18)
+//    @Max(150)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @NotNull (message = "Prosím vyplňte datum narození. Věk musí být větší nebo rovno 18 let.")
+    private LocalDate age;
+//    private int age;
     @Email
     @NotBlank
     private String email;
@@ -37,11 +43,11 @@ public class PersonForm {
         this.surname = surname;
     }
 
-    public int getAge() {
+    public LocalDate getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(LocalDate age) {
         this.age = age;
     }
 
