@@ -5,7 +5,7 @@ body {
     font-family: 'Titillium Web', sans-serif;
     background-color: white;
     /*color: darkslategray;*/
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,14 +14,16 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-h1 {
+h1,h2 {
     font-family: 'Rubik Mono One', monospace;
     text-align: center;
 }
 
-.kosik {
+
+.container-order {
     display: flex;
     flex-direction: column;
     width: 350px;
@@ -31,22 +33,22 @@ h1 {
     background-color: #718093;
     box-shadow: 0 0 10px darkgray;
 }
-.kosik input{
+.container-order input{
     border-radius: 10px;
     padding: 5px;
 }
 
-.kosik .radek {
+.container-order .radek {
     display: block;
     margin-top: 1em;
 }
-.kosik .skupina {
+.container-order .skupina {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.kosik .controls.radek {
+.container-order .controls.radek {
     display: flex;
     justify-content: center;
 }
@@ -64,7 +66,7 @@ header {
     border-radius: 10px;
     border: 2px solid #eee
 }
-.kosik{
+.container-order{
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
@@ -105,8 +107,8 @@ header {
     position: absolute;
     display: inline-block;
     border: 5px dot-dash darkred;
-    top: -10px;
-    right: -20px;
+    /*top: -10px;*/
+    /*right: -20px;*/
     border: 2px solid black;
     padding: 10px;
     background-color: #8d4f4f;
@@ -114,4 +116,10 @@ header {
     font-weight: bolder;
     text-transform: uppercase;
     color:black;
+    justify-content: center;
+}
+
+.container-done{
+    width: 600px;
+    text-transform: uppercase;
 }
