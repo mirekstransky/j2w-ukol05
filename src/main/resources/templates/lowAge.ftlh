@@ -3,7 +3,7 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Registration for battle</title>
+    <title>Registration not successful</title>
 [#--    <link rel="stylesheet" href="/style.css"/>--]
     <style>
         body{
