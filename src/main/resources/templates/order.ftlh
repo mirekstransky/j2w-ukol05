@@ -16,7 +16,7 @@
 <div class="container">
     <div class="container-order container-done">
         <h1>Registration successful</h1>
-        <h2>${enemy}</h2>
+[#--        <h2>${enemy}</h2>--]
         <h2>Fight code order: ${kod}</h2>
         <h2>Email: ${person.email}</h2>
     </div>

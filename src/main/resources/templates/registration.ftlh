@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style-reg.css"/>
     <style>
         body{
-            background: white url(/images/${image}.jpg) center center/cover no-repeat;
+            background: white url(/images/${image}-background.jpg) center center/cover no-repeat;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +17,9 @@
 </head>
 <body>
 <div class="container">
-    <form class="container-order" action="/registration" method="post">
+    <form class="container-order" action="/registration/${adresa}" method="post">
         <h1>Registration for battle</h1>
-        <h2>${enemy}</h2>
+[#--        <h2>${enemy}</h2>--]
 
         <label for="name" class="radek">Name:</label>
 

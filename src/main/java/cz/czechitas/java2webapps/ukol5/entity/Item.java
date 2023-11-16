@@ -9,18 +9,12 @@ public class Item {
     private String thirdStrength;
     private String firstWeakness;
     private String secondWeakness;
-    private int price;
+    private String url;
 
-    public int getPrice() {
-        return price;
-    }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public Item(String name, String image, String firstStrength, String secondStrength, String thirdStrength,
-                String firstWeakness, String secondWeakness, int price) {
+                String firstWeakness, String secondWeakness, String url) {
         this.name = name;
         this.image = image;
         this.firstStrength = firstStrength;
@@ -28,7 +22,15 @@ public class Item {
         this.thirdStrength = thirdStrength;
         this.firstWeakness = firstWeakness;
         this.secondWeakness = secondWeakness;
-        this.price = price;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getName() {

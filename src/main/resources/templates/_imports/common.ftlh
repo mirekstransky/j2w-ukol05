@@ -98,12 +98,10 @@
                         <span>${item.secondWeakness}</span>
                     </li>
                 </ul>
-                <form action="/" method="post">
-                    <div class="item-link">
-                        <input type="hidden" value="${item.name}" name="captionName" />
-                        <button type="submit" class="btn btn--small">Enter the battle</button>
-                    </div>
-                </form>
+                <div class="item-link">
+                    <a href="/registration/${item.url}" class="btn btn--small">Enter the battle</a>
+                </div>
+
             </div>
         </figure>
     [/#list]
